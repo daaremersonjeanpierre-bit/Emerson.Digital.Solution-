@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | Emerson Digital Solution</title>
+    <meta name="description" content="Découvrez les réalisations d'Emerson Digital Solution : sites web, logos, flyers et visuels pour réseaux sociaux.">
+    <link rel="icon" type="image/png" href="assets/logo.png">
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header class="header" id="header">
+        <div class="container header-container">
+            <a href="index.html" class="logo-link" aria-label="Retour à l'accueil">
+                <img src="assets/logo.png" alt="Logo Emerson Digital Solution" class="logo-img">
+            </a>
+            <button class="menu-toggle" id="menu-toggle" aria-label="Ouvrir le menu" aria-expanded="false">
+                <span class="hamburger"></span>
+                <span class="hamburger"></span>
+                <span class="hamburger"></span>
+            </button>
+            <nav class="nav" id="nav">
+                <ul class="nav-list">
+                    <li><a href="index.html" class="nav-link">Accueil</a></li>
+                    <li><a href="a-propos.html" class="nav-link">À propos</a></li>
+                    <li><a href="services.html" class="nav-link">Services</a></li>
+                    <li><a href="portfolio.html" class="nav-link">Portfolio</a></li>
+                    <li><a href="tarifs.html" class="nav-link">Tarifs</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                    <li><a href="contact.html" class="btn btn-primary nav-cta">Demander un devis</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main>
+        <section class="section portfolio-section" style="padding-top: 120px; background-color: var(--white);">
+            <div class="container">
+                <div class="section-header text-center">
+                    <h2 class="section-title">Nos <span class="text-green">Réalisations</span></h2>
+                    <p class="section-subtitle">Découvrez quelques-uns de nos projets (exemples à venir).</p>
+                </div>
+
+                <!-- Filtres -->
+                <div class="portfolio-filters" id="portfolio-filters">
+                    <button class="filter-btn active" data-filter="all">Tout</button>
+                    <button class="filter-btn" data-filter="web">Sites web</button>
+                    <button class="filter-btn" data-filter="logo">Logos</button>
+                    <button class="filter-btn" data-filter="flyer">Flyers</button>
+                    <button class="filter-btn" data-filter="social">Réseaux sociaux</button>
+                    <button class="filter-btn" data-filter="video">Vidéos</button>
+                </div>
+
+                <!-- Grille Portfolio -->
+                <div class="portfolio-grid" id="portfolio-grid">
+                    
+                    <!-- Projet 1 -->
+                    <article class="portfolio-item" data-category="web">
+                        <div class="portfolio-img-placeholder bg-navy">
+                            <span>Aperçu Site Web</span>
+                        </div>
+                        <div class="portfolio-info">
+                            <span class="portfolio-cat">Sites web</span>
+                            <h3>Site Vitrine Pro</h3>
+                            <p>Présentation d'entreprise moderne et responsive.</p>
+                            <button class="btn btn-outline btn-sm view-details-btn" data-title="Site Vitrine Pro" data-desc="Un site web complet conçu pour une entreprise locale souhaitant asseoir sa crédibilité en ligne. Design épuré et adapté aux mobiles.">Voir détails</button>
+                        </div>
+                    </article>
+
+                    <!-- Projet 2 -->
+                    <article class="portfolio-item" data-category="logo">
+                        <div class="portfolio-img-placeholder bg-green">
+                            <span>Aperçu Logo</span>
+                        </div>
+                        <div class="portfolio-info">
+                            <span class="portfolio-cat">Logos</span>
+                            <h3>Identité Visuelle</h3>
+                            <p>Création de logo et charte graphique.</p>
+                            <button class="btn btn-outline btn-sm view-details-btn" data-title="Identité Visuelle" data-desc="Création d'un logo sur mesure pour une marque émergente, avec déclinaisons pour les réseaux sociaux et supports imprimés.">Voir détails</button>
+                        </div>
+                    </article>
+
+                    <!-- Projet 3 -->
+                    <article class="portfolio-item" data-category="flyer">
+                        <div class="portfolio-img-placeholder bg-blue">
+                            <span>Aperçu Flyer</span>
+                        </div>
+                        <div class="portfolio-info">
+                            <span class="portfolio-cat">Flyers</span>
+                            <h3>Flyer Promotionnel</h3>
+                            <p>Design accrocheur pour une campagne locale.</p>
+                            <button class="btn btn-outline btn-sm view-details-btn" data-title="Flyer Promotionnel" data-desc="Conception d'un flyer A4 recto-verso pour une promotion saisonnière, mettant en avant les couleurs et le message clé du client.">Voir détails</button>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FENÊTRE MODALE PORTFOLIO -->
+    <div id="portfolio-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h3 id="modal-title">Titre du projet</h3>
+            <p id="modal-desc">Description du projet...</p>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-col">
+                <img src="assets/logo.png" alt="Logo Emerson Digital Solution" class="footer-logo">
+                <p class="footer-desc">Des solutions digitales pour booster votre présence en ligne.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Navigation</h4>
+                <ul>
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="a-propos.html">À propos</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="tarifs.html">Tarifs</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Services</h4>
+                <ul>
+                    <li><a href="services.html">Développement Web</a></li>
+                    <li><a href="services.html">Design Graphique</a></li>
+                    <li><a href="services.html">Montage Vidéo</a></li>
+                    <li><a href="services.html">Marketing Digital</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <p>Haïti</p>
+                <p><a href="https://wa.me/50943521045" target="_blank" rel="noopener" class="text-green">+509 4352 1045</a></p>
+            </div>
+        </div>
+        <div class="footer-bottom text-center">
+            <p>&copy; <span id="year"></span> Emerson Digital Solution. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/50943521045?text=Bonjour%20Emerson%20Digital%20Solution%2C%20j'aimerais%20discuter%20d'un%20projet." target="_blank" rel="noopener" class="whatsapp-float" aria-label="Discuter sur WhatsApp">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+    </a>
+
+    <script src="scripts/script.js"></script>
+</body>
+</html>
