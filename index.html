@@ -1,223 +1,471 @@
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Emerson Digital Solution | Sites web et design graphique</title>
+    <title>Emerson Digital Solution | Vos solutions digitales en Haïti</title>
+    <meta name="description" content="Emerson Digital Solution vous accompagne avec la création de sites web, le design graphique, le montage vidéo, le marketing digital et les services numériques. Contactez-nous sur WhatsApp.">
+    <meta name="theme-color" content="#0b1739">
 
-    <meta name="description" content="Emerson Digital Solution accompagne les entrepreneurs en Haïti : création de sites web, design graphique, montage vidéo et communication digitale.">
-
-    <meta name="theme-color" content="#0b1730">
-
-    <meta property="og:title" content="Emerson Digital Solution">
-    <meta property="og:description" content="Des solutions digitales pour booster votre business en ligne.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://emersondigitalsolution.vercel.app/">
-    <meta property="og:image" content="https://emersondigitalsolution.vercel.app/logo.png">
-
-    <link rel="canonical" href="https://emersondigitalsolution.vercel.app/">
     <link rel="icon" type="image/png" href="logo.png">
     <link rel="stylesheet" href="style.css">
 
     <style>
-        /* Améliorations locales : cette version ne nécessite pas
-           de remplacer immédiatement le fichier style.css. */
-
-        .hero-title {
-            line-height: 1.2;
-            max-width: 750px;
+        /* Améliorations spécifiques à la page d'accueil */
+        .home-hero {
+            padding: 145px 0 85px;
+            background: linear-gradient(135deg, #0b1739 0%, #122956 65%, #0b1739 100%);
+            color: #ffffff;
+            overflow: hidden;
         }
 
-        .hero-description {
-            max-width: 650px;
-            line-height: 1.8;
-        }
-
-        .hero-buttons {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 12px;
-            margin-top: 25px;
-        }
-
-        .hero-buttons .btn {
-            text-align: center;
+        .home-hero .container {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            align-items: center;
+            gap: 45px;
         }
 
         .hero-badge {
+            display: inline-block;
+            color: #7dff67;
+            border: 1px solid rgba(125,255,103,.45);
+            background: rgba(125,255,103,.08);
+            padding: 9px 14px;
+            border-radius: 30px;
+            font-size: .88rem;
+            margin-bottom: 22px;
+        }
+
+        .home-hero h1 {
+            font-size: clamp(2.2rem, 5vw, 3.8rem);
+            line-height: 1.15;
+            margin: 0 0 22px;
+            color: #ffffff;
+        }
+
+        .home-hero h1 span {
+            color: #7dff67;
+        }
+
+        .hero-description {
+            color: #e1e8f5;
+            font-size: 1.08rem;
+            line-height: 1.8;
+            max-width: 620px;
+            margin-bottom: 28px;
+        }
+
+        .hero-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 13px;
+            margin-bottom: 24px;
+        }
+
+        .hero-actions .btn {
+            text-align: center;
+            padding: 14px 20px;
+        }
+
+        .btn-whatsapp {
             display: inline-flex;
             align-items: center;
-            gap: 8px;
-            margin-bottom: 18px;
-            padding: 8px 13px;
-            border: 1px solid rgba(0, 230, 118, 0.3);
-            border-radius: 30px;
-            color: #00e676;
-            background: rgba(0, 230, 118, 0.07);
-            font-size: 0.85rem;
+            justify-content: center;
+            gap: 9px;
+            background: #25D366;
+            color: #082b17;
+            border: 2px solid #25D366;
+            border-radius: 6px;
+            padding: 13px 19px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: transform .2s, background .2s;
+        }
+
+        .btn-whatsapp:hover {
+            background: #7dff67;
+            border-color: #7dff67;
+            transform: translateY(-2px);
+        }
+
+        .hero-note {
+            color: #cbd6e8;
+            font-size: .91rem;
+        }
+
+        .hero-visual {
+            padding: 30px;
+            border: 1px solid rgba(255,255,255,.15);
+            border-radius: 20px;
+            background: rgba(255,255,255,.06);
+            box-shadow: 0 20px 60px rgba(0,0,0,.2);
+        }
+
+        .hero-visual h2 {
+            font-size: 1.35rem;
+            color: #ffffff;
+            margin-bottom: 8px;
+        }
+
+        .hero-visual > p {
+            color: #d5dfef;
+            line-height: 1.6;
+            margin-bottom: 22px;
+        }
+
+        .hero-service {
+            display: flex;
+            align-items: center;
+            gap: 13px;
+            padding: 13px 0;
+            border-bottom: 1px solid rgba(255,255,255,.12);
+        }
+
+        .hero-service:last-child {
+            border-bottom: none;
+        }
+
+        .hero-service-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            width: 43px;
+            height: 43px;
+            border-radius: 10px;
+            background: rgba(125,255,103,.12);
+            font-size: 1.3rem;
+        }
+
+        .hero-service strong {
+            display: block;
+            color: #ffffff;
+            margin-bottom: 3px;
+        }
+
+        .hero-service small {
+            color: #cbd6e8;
+            line-height: 1.5;
+        }
+
+        .trust-strip {
+            padding: 24px 0;
+            background: #f3f6fb;
+        }
+
+        .trust-strip-inner {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px 35px;
+            text-align: center;
+        }
+
+        .trust-item {
+            color: #18294a;
+            font-size: .95rem;
             font-weight: 600;
         }
 
-        .hero-badge-dot {
-            width: 8px;
-            height: 8px;
-            border-radius: 50%;
-            background: #00e676;
-            flex-shrink: 0;
+        .trust-item span {
+            color: #168c40;
+            margin-right: 6px;
         }
 
-        .hero-trust {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 16px;
-            margin-top: 25px;
-            font-size: 0.9rem;
+        .home-section {
+            padding: 75px 0;
         }
 
-        .hero-trust span {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
+        .home-section .section-header {
+            max-width: 760px;
+            margin: 0 auto 40px;
         }
 
-        .hero-trust strong {
-            color: #00e676;
-        }
-
-        .section-intro {
-            max-width: 700px;
-            margin: 0 auto 35px;
-            text-align: center;
+        .home-section .section-subtitle {
             line-height: 1.8;
         }
 
-        .service-card {
-            height: 100%;
-        }
-
-        .service-card h3 {
-            margin-top: 16px;
-        }
-
-        .service-card p {
-            line-height: 1.7;
-        }
-
-        .service-card .btn-text {
-            display: inline-block;
-            margin-top: 10px;
-        }
-
-        .benefits-section {
-            padding: 70px 0;
-        }
-
-        .benefits-grid {
+        .services-home-grid {
             display: grid;
             grid-template-columns: repeat(3, minmax(0, 1fr));
             gap: 22px;
-            margin-top: 35px;
         }
 
-        .benefit-card {
-            padding: 24px;
-            border: 1px solid rgba(128, 128, 128, 0.2);
-            border-radius: 14px;
+        .home-service-card {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            padding: 25px;
+            border: 1px solid #e5eaf2;
+            border-radius: 12px;
+            background: #ffffff;
+            box-shadow: 0 6px 22px rgba(11,23,57,.045);
+            transition: transform .2s, box-shadow .2s;
         }
 
-        .benefit-card h3 {
+        .home-service-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 28px rgba(11,23,57,.1);
+        }
+
+        .home-service-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 53px;
+            height: 53px;
+            border-radius: 12px;
+            background: #eaffea;
+            font-size: 1.6rem;
+            margin-bottom: 17px;
+        }
+
+        .home-service-card h3 {
+            margin: 0 0 11px;
+            color: #0b1739;
+            font-size: 1.18rem;
+        }
+
+        .home-service-card p {
+            color: #536078;
+            line-height: 1.75;
+            margin-bottom: 18px;
+        }
+
+        .home-service-card .service-actions {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 13px;
+            margin-top: auto;
+        }
+
+        .service-link {
+            color: #137a36;
+            font-weight: 700;
+            text-decoration: none;
+        }
+
+        .service-link:hover {
+            text-decoration: underline;
+        }
+
+        .mini-order-link {
+            color: #0b1739;
+            font-weight: 700;
+            font-size: .91rem;
+            text-decoration: none;
+        }
+
+        .mini-order-link:hover {
+            color: #168c40;
+        }
+
+        .why-section {
+            background: #f3f6fb;
+        }
+
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 25px;
+        }
+
+        .why-card {
+            padding: 25px;
+            background: #ffffff;
+            border-radius: 12px;
+            border: 1px solid #e4e9f1;
+        }
+
+        .why-card h3 {
+            color: #0b1739;
             margin: 12px 0;
         }
 
-        .benefit-card p {
+        .why-card p {
+            color: #536078;
+            line-height: 1.75;
+            margin: 0;
+        }
+
+        .why-icon {
+            font-size: 1.8rem;
+        }
+
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 25px;
+        }
+
+        .step-card {
+            text-align: center;
+            padding: 26px 22px;
+            border: 1px solid #e5eaf2;
+            border-radius: 12px;
+        }
+
+        .step-number {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            margin: 0 auto 17px;
+            color: #0b1739;
+            background: #7dff67;
+            font-weight: 800;
+            font-size: 1.2rem;
+        }
+
+        .step-card h3 {
+            color: #0b1739;
+            margin-bottom: 10px;
+        }
+
+        .step-card p {
+            color: #536078;
             line-height: 1.7;
         }
 
-        .benefit-number {
-            display: inline-flex;
+        .portfolio-home {
+            background: #f3f6fb;
+        }
+
+        .portfolio-home-card {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
             align-items: center;
-            justify-content: center;
-            width: 42px;
-            height: 42px;
-            border-radius: 12px;
-            background: rgba(0, 230, 118, 0.12);
-            color: #00c968;
-            font-size: 1.1rem;
-            font-weight: 800;
+            gap: 30px;
+            padding: 30px;
+            background: #ffffff;
+            border-radius: 15px;
+            border: 1px solid #e5eaf2;
         }
 
-        .about-content {
-            max-width: 760px;
-            margin: 0 auto;
-            text-align: center;
+        .portfolio-home-card img {
+            width: 100%;
+            max-height: 310px;
+            object-fit: contain;
+            border-radius: 8px;
+        }
+
+        .portfolio-home-card h3 {
+            color: #0b1739;
+            margin-bottom: 13px;
+        }
+
+        .portfolio-home-card p {
+            color: #536078;
             line-height: 1.8;
+            margin-bottom: 20px;
         }
 
-        .final-cta {
-            padding: 60px 20px;
-            margin: 30px 0;
-            border-radius: 18px;
+        .home-cta {
+            padding: 65px 0;
+            background: #0b1739;
+            color: #ffffff;
             text-align: center;
-            background: rgba(0, 230, 118, 0.07);
-            border: 1px solid rgba(0, 230, 118, 0.2);
         }
 
-        .final-cta h2 {
-            margin-bottom: 15px;
+        .home-cta h2 {
+            color: #ffffff;
+            font-size: clamp(1.8rem, 4vw, 2.6rem);
+            margin-bottom: 16px;
         }
 
-        .final-cta p {
-            max-width: 650px;
+        .home-cta p {
+            color: #dbe4f3;
+            line-height: 1.8;
+            max-width: 700px;
             margin: 0 auto 25px;
-            line-height: 1.8;
         }
 
-        .final-cta .btn {
-            display: inline-flex;
+        .home-cta .hero-actions {
             justify-content: center;
+            margin-bottom: 0;
         }
 
         .footer-desc {
             line-height: 1.7;
         }
 
-        @media (max-width: 768px) {
-            .benefits-grid {
+        @media (max-width: 900px) {
+            .home-hero .container {
                 grid-template-columns: 1fr;
+                gap: 35px;
             }
 
-            .hero-buttons {
+            .hero-visual {
+                max-width: 650px;
+            }
+
+            .services-home-grid,
+            .why-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+
+        @media (max-width: 600px) {
+            .home-hero {
+                padding: 115px 0 55px;
+            }
+
+            .home-hero .container {
+                gap: 28px;
+            }
+
+            .home-hero h1 {
+                font-size: 2.15rem;
+            }
+
+            .hero-description {
+                font-size: 1rem;
+            }
+
+            .hero-actions {
                 flex-direction: column;
+                align-items: stretch;
             }
 
-            .hero-buttons .btn {
+            .hero-actions .btn,
+            .hero-actions .btn-whatsapp {
                 width: 100%;
                 box-sizing: border-box;
             }
 
-            .hero-trust {
-                flex-direction: column;
-                gap: 10px;
+            .hero-visual {
+                padding: 20px;
             }
 
-            .benefits-section {
-                padding: 45px 0;
+            .home-section {
+                padding: 55px 0;
             }
 
-            .final-cta {
-                padding: 40px 18px;
+            .services-home-grid,
+            .why-grid,
+            .steps-grid,
+            .portfolio-home-card {
+                grid-template-columns: 1fr;
             }
-        }
 
-        @media (prefers-reduced-motion: reduce) {
-            *,
-            *::before,
-            *::after {
-                scroll-behavior: auto !important;
-                animation-duration: 0.01ms !important;
-                animation-iteration-count: 1 !important;
-                transition-duration: 0.01ms !important;
+            .home-service-card,
+            .why-card {
+                padding: 21px;
+            }
+
+            .portfolio-home-card {
+                padding: 20px;
+            }
+
+            .trust-strip-inner {
+                gap: 13px 20px;
             }
         }
     </style>
@@ -225,30 +473,15 @@
 
 <body>
 
-    <!-- ================= HEADER / NAVIGATION ================= -->
-
+    <!-- EN-TÊTE : logo conservé -->
     <header class="header" id="header">
         <div class="container header-container">
-
-            <a href="index.html" class="logo-link"
-               aria-label="Retour à l'accueil">
-                <img
-                    src="logo.png"
-                    alt="Logo Emerson Digital Solution"
-                    class="logo-img"
-                    width="180"
-                    height="80"
-                    fetchpriority="high">
+            <a href="index.html" class="logo-link" aria-label="Retour à l'accueil">
+                <img src="logo.png" alt="Logo Emerson Digital Solution" class="logo-img">
             </a>
 
-            <button
-                class="menu-toggle"
-                id="menu-toggle"
-                type="button"
-                aria-label="Ouvrir le menu"
-                aria-expanded="false"
-                aria-controls="nav">
-
+            <button class="menu-toggle" id="menu-toggle"
+                    aria-label="Ouvrir le menu" aria-expanded="false">
                 <span class="hamburger"></span>
                 <span class="hamburger"></span>
                 <span class="hamburger"></span>
@@ -256,501 +489,390 @@
 
             <nav class="nav" id="nav" aria-label="Navigation principale">
                 <ul class="nav-list">
-                    <li>
-                        <a href="index.html"
-                           class="nav-link"
-                           aria-current="page">Accueil</a>
-                    </li>
-
-                    <li>
-                        <a href="a-propos.html" class="nav-link">À propos</a>
-                    </li>
-
-                    <li>
-                        <a href="services.html" class="nav-link">Services</a>
-                    </li>
-
-                    <li>
-                        <a href="portfolio.html" class="nav-link">Portfolio</a>
-                    </li>
-
-                    <li>
-                        <a href="tarifs.html" class="nav-link">Tarifs</a>
-                    </li>
-
-                    <li>
-                        <a href="contact.html" class="nav-link">Contact</a>
-                    </li>
-
-                    <li>
-                        <a href="contact.html" class="btn btn-primary nav-cta">
-                            Demander un devis
-                        </a>
-                    </li>
+                    <li><a href="index.html" class="nav-link">Accueil</a></li>
+                    <li><a href="a-propos.html" class="nav-link">À propos</a></li>
+                    <li><a href="services.html" class="nav-link">Services</a></li>
+                    <li><a href="portfolio.html" class="nav-link">Portfolio</a></li>
+                    <li><a href="tarifs.html" class="nav-link">Tarifs</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                    <li><a href="contact.html" class="btn btn-primary nav-cta">Demander un devis</a></li>
                 </ul>
             </nav>
-
         </div>
     </header>
 
-
     <main>
 
-        <!-- ================= SECTION HERO ================= -->
-
-        <section class="hero">
-            <div class="container hero-container">
-
+        <!-- SECTION PRINCIPALE -->
+        <section class="home-hero">
+            <div class="container">
                 <div class="hero-content">
+                    <span class="hero-badge">Votre partenaire digital en Haïti</span>
 
-                    <div class="hero-badge">
-                        <span class="hero-badge-dot"></span>
-                        Votre partenaire digital en Haïti
-                    </div>
-
-                    <h1 class="hero-title">
-                        Des solutions digitales pour booster
-                        <span class="text-green">votre business en ligne</span>
+                    <h1>
+                        Faites grandir votre business avec
+                        <span>des solutions digitales</span>
                     </h1>
 
                     <p class="hero-description">
-                        Vous êtes entrepreneur, commerçant, créateur ou
-                        propriétaire d'une petite entreprise ?
-                        Emerson Digital Solution vous accompagne avec
-                        des services numériques adaptés à vos besoins
-                        pour valoriser votre image, développer votre
-                        activité et concrétiser vos projets.
+                        Vous êtes entrepreneur, commerçant, une entreprise ou un particulier ?
+                        Nous vous accompagnons avec des services numériques adaptés à vos besoins
+                        pour présenter votre activité, attirer des clients et développer votre présence en ligne.
                     </p>
 
-                    <div class="hero-buttons">
-
-                        <a href="services.html" class="btn btn-primary">
-                            Découvrir nos services
-                        </a>
-
-                        <a
-                            href="https://wa.me/50943521045?text=Bonjour%20Emerson%20Digital%20Solution%2C%20je%20souhaite%20discuter%20d%27un%20projet."
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            class="btn btn-secondary">
-
+                    <div class="hero-actions">
+                        <a class="btn-whatsapp"
+                           href="https://wa.me/50943521045?text=Bonjour%20Emerson%20Digital%20Solution%20%21%20Je%20souhaite%20commander%20un%20service.%20Pouvez-vous%20m%27accompagner%20%3F"
+                           target="_blank" rel="noopener noreferrer">
+                            <span aria-hidden="true">☏</span>
                             Commander sur WhatsApp
                         </a>
 
+                        <a href="services.html" class="btn btn-outline">
+                            Découvrir nos services
+                        </a>
                     </div>
 
-                    <div class="hero-trust">
-                        <span>
-                            <strong>✓</strong>
-                            Des solutions adaptées à vos besoins
-                        </span>
-
-                        <span>
-                            <strong>✓</strong>
-                            Un contact direct et personnalisé
-                        </span>
-                    </div>
-
-                </div>
-
-
-                <!-- Illustration conservée -->
-
-                <div class="hero-visual" aria-label="Aperçu des solutions digitales">
-
-                    <div class="mockup-laptop">
-                        <div class="mockup-screen">
-
-                            <div class="mockup-header"></div>
-
-                            <div class="mockup-body">
-
-                                <img
-                                    src="logo.png"
-                                    alt="Aperçu du site Emerson Digital Solution"
-                                    class="mockup-logo"
-                                    loading="lazy">
-
-                                <div class="mockup-lines">
-                                    <div class="line long"></div>
-                                    <div class="line short"></div>
-                                </div>
-
-                                <div class="mockup-btn"></div>
-
-                            </div>
-                        </div>
-
-                        <div class="mockup-base"></div>
-                    </div>
-
-
-                    <div class="mockup-phone">
-                        <div class="mockup-phone-screen">
-
-                            <div class="phone-notch"></div>
-
-                            <img
-                                src="logo.png"
-                                alt="Aperçu mobile d'Emerson Digital Solution"
-                                class="mockup-logo-small"
-                                loading="lazy">
-
-                            <div class="line long"></div>
-                            <div class="line short"></div>
-                            <div class="mockup-btn-small"></div>
-
-                        </div>
-                    </div>
-
-                </div>
-
-            </div>
-        </section>
-
-
-        <!-- ================= SERVICES ================= -->
-
-        <section class="quick-services section" id="services-rapides">
-
-            <div class="container">
-
-                <div class="section-header text-center">
-                    <h2 class="section-title">
-                        Nos solutions pour
-                        <span class="text-green">votre business</span>
-                    </h2>
-
-                    <p class="section-intro">
-                        Découvrez nos services numériques pour améliorer
-                        votre image, présenter vos offres et développer
-                        votre présence en ligne.
+                    <p class="hero-note">
+                        Une question ou un projet particulier ? Échangeons directement sur WhatsApp.
                     </p>
                 </div>
 
+                <div class="hero-visual">
+                    <h2>Comment pouvons-nous vous aider ?</h2>
+                    <p>Des solutions pour lancer, améliorer et développer votre activité.</p>
 
-                <div class="grid-4">
-
-                    <!-- Site web -->
-
-                    <article class="card service-card text-center">
-
-                        <div class="icon-wrapper" aria-hidden="true">
-                            <svg viewBox="0 0 24 24"
-                                 fill="none"
-                                 stroke="currentColor"
-                                 stroke-width="2">
-                                <rect x="2" y="3" width="20" height="18" rx="2"></rect>
-                                <path d="M2 8h20"></path>
-                                <path d="M6 5.5h.01M9 5.5h.01"></path>
-                                <path d="M7 13h4M7 16h8"></path>
-                            </svg>
+                    <div class="hero-service">
+                        <div class="hero-service-icon" aria-hidden="true">🌐</div>
+                        <div>
+                            <strong>Sites web et boutiques en ligne</strong>
+                            <small>Présentez vos produits et votre entreprise sur Internet.</small>
                         </div>
+                    </div>
 
+                    <div class="hero-service">
+                        <div class="hero-service-icon" aria-hidden="true">🎨</div>
+                        <div>
+                            <strong>Design graphique</strong>
+                            <small>Logos, flyers, affiches et visuels professionnels.</small>
+                        </div>
+                    </div>
+
+                    <div class="hero-service">
+                        <div class="hero-service-icon" aria-hidden="true">📱</div>
+                        <div>
+                            <strong>Communication digitale</strong>
+                            <small>Des contenus pour mieux communiquer avec vos clients.</small>
+                        </div>
+                    </div>
+
+                    <div class="hero-service">
+                        <div class="hero-service-icon" aria-hidden="true">🎬</div>
+                        <div>
+                            <strong>Vidéo et services numériques</strong>
+                            <small>Montage vidéo et autres services selon vos besoins.</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- POINTS DE CONFIANCE -->
+        <section class="trust-strip" aria-label="Nos engagements">
+            <div class="container trust-strip-inner">
+                <div class="trust-item"><span>✓</span> Services variés</div>
+                <div class="trust-item"><span>✓</span> Contact direct</div>
+                <div class="trust-item"><span>✓</span> Demandes personnalisées</div>
+                <div class="trust-item"><span>✓</span> Commande simple sur WhatsApp</div>
+            </div>
+        </section>
+
+        <!-- SERVICES -->
+        <section class="home-section" id="services">
+            <div class="container">
+                <div class="section-header text-center">
+                    <h2 class="section-title">
+                        Nos <span class="text-green">services</span>
+                    </h2>
+                    <p class="section-subtitle">
+                        Tout ce qu'il faut pour améliorer votre image, présenter votre activité
+                        et développer votre présence numérique au même endroit.
+                    </p>
+                </div>
+
+                <div class="services-home-grid">
+
+                    <article class="home-service-card">
+                        <div class="home-service-icon" aria-hidden="true">🌐</div>
                         <h3>Création de sites web</h3>
-
                         <p>
-                            Des sites vitrines, portfolios et boutiques
-                            en ligne pour présenter votre activité
-                            et vos produits.
+                            Sites vitrines, sites professionnels et boutiques en ligne pour présenter
+                            votre entreprise, vos produits ou vos services.
                         </p>
-
-                        <a href="services.html"
-                           class="btn-text"
-                           aria-label="Découvrir nos services de création de sites web">
-                            Découvrir le service →
-                        </a>
-
+                        <div class="service-actions">
+                            <a href="services.html" class="service-link">En savoir plus →</a>
+                            <a class="mini-order-link"
+                               href="https://wa.me/50943521045?text=Bonjour%2C%20je%20souhaite%20commander%20un%20site%20web%20ou%20une%20boutique%20en%20ligne."
+                               target="_blank" rel="noopener noreferrer">Commander</a>
+                        </div>
                     </article>
 
-
-                    <!-- Design graphique -->
-
-                    <article class="card service-card text-center">
-
-                        <div class="icon-wrapper" aria-hidden="true">
-                            <svg viewBox="0 0 24 24"
-                                 fill="none"
-                                 stroke="currentColor"
-                                 stroke-width="2">
-                                <path d="M12 19l7-7 3 3-7 7-3-3z"></path>
-                                <path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"></path>
-                                <path d="M2 2l7.586 7.586"></path>
-                                <circle cx="11" cy="11" r="2"></circle>
-                            </svg>
-                        </div>
-
+                    <article class="home-service-card">
+                        <div class="home-service-icon" aria-hidden="true">🎨</div>
                         <h3>Design graphique</h3>
-
                         <p>
-                            Des logos, flyers, affiches et visuels
-                            pour donner une identité professionnelle
-                            à votre marque.
+                            Logos, flyers, affiches, cartes de visite et bannières pour donner
+                            à votre activité une image claire et professionnelle.
                         </p>
-
-                        <a href="services.html"
-                           class="btn-text"
-                           aria-label="Découvrir nos services de design graphique">
-                            Découvrir le service →
-                        </a>
-
+                        <div class="service-actions">
+                            <a href="services.html" class="service-link">En savoir plus →</a>
+                            <a class="mini-order-link"
+                               href="https://wa.me/50943521045?text=Bonjour%2C%20je%20souhaite%20commander%20un%20service%20de%20design%20graphique."
+                               target="_blank" rel="noopener noreferrer">Commander</a>
+                        </div>
                     </article>
 
-
-                    <!-- Communication digitale -->
-
-                    <article class="card service-card text-center">
-
-                        <div class="icon-wrapper" aria-hidden="true">
-                            <svg viewBox="0 0 24 24"
-                                 fill="none"
-                                 stroke="currentColor"
-                                 stroke-width="2">
-                                <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
-                            </svg>
-                        </div>
-
+                    <article class="home-service-card">
+                        <div class="home-service-icon" aria-hidden="true">📱</div>
                         <h3>Communication digitale</h3>
-
                         <p>
-                            Des visuels et contenus pour présenter
-                            vos produits, communiquer sur vos offres
-                            et renforcer votre présence en ligne.
+                            Accompagnement pour mieux présenter votre activité sur les réseaux
+                            sociaux et communiquer avec votre public.
                         </p>
-
-                        <a href="services.html"
-                           class="btn-text"
-                           aria-label="Découvrir nos services de communication digitale">
-                            Découvrir le service →
-                        </a>
-
-                    </article>
-
-
-                    <!-- Produits numériques -->
-
-                    <article class="card service-card text-center">
-
-                        <div class="icon-wrapper" aria-hidden="true">
-                            <svg viewBox="0 0 24 24"
-                                 fill="none"
-                                 stroke="currentColor"
-                                 stroke-width="2">
-                                <rect x="2" y="5" width="20" height="14" rx="2"></rect>
-                                <path d="M2 10h20"></path>
-                                <path d="M6 15h4"></path>
-                            </svg>
+                        <div class="service-actions">
+                            <a href="services.html" class="service-link">En savoir plus →</a>
+                            <a class="mini-order-link"
+                               href="https://wa.me/50943521045?text=Bonjour%2C%20je%20souhaite%20discuter%20de%20la%20communication%20digitale%20de%20mon%20activit%C3%A9."
+                               target="_blank" rel="noopener noreferrer">Commander</a>
                         </div>
+                    </article>
 
+                    <article class="home-service-card">
+                        <div class="home-service-icon" aria-hidden="true">🖼️</div>
+                        <h3>Création de contenus visuels</h3>
+                        <p>
+                            Des visuels adaptés à vos publications, promotions, annonces et
+                            campagnes pour mieux attirer l'attention.
+                        </p>
+                        <div class="service-actions">
+                            <a href="services.html" class="service-link">En savoir plus →</a>
+                            <a class="mini-order-link"
+                               href="https://wa.me/50943521045?text=Bonjour%2C%20je%20souhaite%20commander%20des%20contenus%20visuels%20pour%20mon%20activit%C3%A9."
+                               target="_blank" rel="noopener noreferrer">Commander</a>
+                        </div>
+                    </article>
+
+                    <article class="home-service-card">
+                        <div class="home-service-icon" aria-hidden="true">🎬</div>
+                        <h3>Montage vidéo</h3>
+                        <p>
+                            Montage de vidéos pour vos promotions, présentations, publications
+                            et contenus destinés aux réseaux sociaux.
+                        </p>
+                        <div class="service-actions">
+                            <a href="services.html" class="service-link">En savoir plus →</a>
+                            <a class="mini-order-link"
+                               href="https://wa.me/50943521045?text=Bonjour%2C%20je%20souhaite%20commander%20un%20service%20de%20montage%20vid%C3%A9o."
+                               target="_blank" rel="noopener noreferrer">Commander</a>
+                        </div>
+                    </article>
+
+                    <article class="home-service-card">
+                        <div class="home-service-icon" aria-hidden="true">📲</div>
                         <h3>Services numériques et top-up</h3>
-
                         <p>
-                            Des recharges et produits numériques
-                            selon les services et disponibilités
-                            proposés par notre entreprise.
+                            Des services numériques complémentaires et des solutions de recharge
+                            selon les produits et disponibilités proposés.
                         </p>
-
-                        <a href="services.html"
-                           class="btn-text"
-                           aria-label="Découvrir nos services numériques et top-up">
-                            Découvrir le service →
-                        </a>
-
+                        <div class="service-actions">
+                            <a href="services.html" class="service-link">En savoir plus →</a>
+                            <a class="mini-order-link"
+                               href="https://wa.me/50943521045?text=Bonjour%2C%20je%20souhaite%20conna%C3%AEtre%20les%20services%20num%C3%A9riques%20et%20top-up%20disponibles."
+                               target="_blank" rel="noopener noreferrer">Commander</a>
+                        </div>
                     </article>
 
                 </div>
 
+                <div class="text-center" style="margin-top: 35px;">
+                    <a href="services.html" class="btn btn-primary">
+                        Voir tous nos services
+                    </a>
+                </div>
             </div>
-
         </section>
 
-
-        <!-- ================= POURQUOI NOUS CHOISIR ================= -->
-
-        <section class="benefits-section">
-
+        <!-- POURQUOI NOUS CHOISIR -->
+        <section class="home-section why-section">
             <div class="container">
-
                 <div class="section-header text-center">
-
                     <h2 class="section-title">
-                        Pourquoi choisir
-                        <span class="text-green">EDS ?</span>
+                        Pourquoi choisir <span class="text-green">EDS</span> ?
                     </h2>
-
-                    <p class="section-intro">
-                        Nous souhaitons rendre les solutions digitales
-                        plus accessibles aux entrepreneurs, aux créateurs
-                        et aux petites entreprises.
+                    <p class="section-subtitle">
+                        Nous cherchons à comprendre votre besoin pour vous proposer une solution
+                        adaptée à votre projet et à vos objectifs.
                     </p>
-
                 </div>
 
-
-                <div class="benefits-grid">
-
-                    <article class="benefit-card">
-
-                        <span class="benefit-number">01</span>
-
+                <div class="why-grid">
+                    <article class="why-card">
+                        <div class="why-icon" aria-hidden="true">🎯</div>
                         <h3>Des solutions adaptées</h3>
-
                         <p>
-                            Chaque projet est différent. Nous cherchons
-                            à proposer une solution qui correspond à
-                            vos besoins et aux objectifs de votre activité.
+                            Votre projet est unique. Nous échangeons avec vous pour mieux comprendre
+                            votre demande avant de définir la solution appropriée.
                         </p>
-
                     </article>
 
-
-                    <article class="benefit-card">
-
-                        <span class="benefit-number">02</span>
-
-                        <h3>Une image plus professionnelle</h3>
-
-                        <p>
-                            Un site web et des supports visuels bien
-                            présentés peuvent aider vos clients à mieux
-                            comprendre votre offre et votre identité.
-                        </p>
-
-                    </article>
-
-
-                    <article class="benefit-card">
-
-                        <span class="benefit-number">03</span>
-
+                    <article class="why-card">
+                        <div class="why-icon" aria-hidden="true">🤝</div>
                         <h3>Un contact direct</h3>
-
                         <p>
-                            Expliquez-nous votre idée et vos attentes.
-                            Nous pourrons discuter de votre projet et
-                            déterminer ensemble les prochaines étapes.
+                            Vous pouvez nous écrire sur WhatsApp pour poser vos questions,
+                            expliquer votre besoin et demander un devis.
                         </p>
-
                     </article>
 
+                    <article class="why-card">
+                        <div class="why-icon" aria-hidden="true">📱</div>
+                        <h3>Un parcours simple</h3>
+                        <p>
+                            Découvrez les services sur le site, choisissez celui qui vous intéresse
+                            et démarrez votre commande depuis votre téléphone.
+                        </p>
+                    </article>
                 </div>
-
             </div>
-
         </section>
 
-
-        <!-- ================= À PROPOS ================= -->
-
-        <section class="section a-propos">
-
+        <!-- ÉTAPES DE COMMANDE -->
+        <section class="home-section" id="comment-commander">
             <div class="container">
-
                 <div class="section-header text-center">
-
                     <h2 class="section-title">
-                        Qui sommes-
-                        <span class="text-green">nous ?</span>
+                        Comment <span class="text-green">commander</span> ?
                     </h2>
-
+                    <p class="section-subtitle">
+                        Trois étapes simples pour commencer votre projet avec Emerson Digital Solution.
+                    </p>
                 </div>
 
+                <div class="steps-grid">
+                    <article class="step-card">
+                        <div class="step-number">1</div>
+                        <h3>Choisissez un service</h3>
+                        <p>
+                            Parcourez nos services et identifiez celui qui correspond
+                            à votre besoin.
+                        </p>
+                    </article>
 
-                <div class="about-content">
+                    <article class="step-card">
+                        <div class="step-number">2</div>
+                        <h3>Contactez-nous</h3>
+                        <p>
+                            Cliquez sur le bouton WhatsApp et expliquez-nous ce que vous souhaitez.
+                        </p>
+                    </article>
 
-                    <p>
-                        Emerson Digital Solution accompagne les
-                        entrepreneurs, les créateurs, les petites
-                        entreprises et les particuliers dans leurs
-                        projets numériques.
-                    </p>
+                    <article class="step-card">
+                        <div class="step-number">3</div>
+                        <h3>Confirmez votre projet</h3>
+                        <p>
+                            Nous discutons des détails, du prix, du délai et des prochaines étapes
+                            avant de démarrer.
+                        </p>
+                    </article>
+                </div>
 
-                    <p>
-                        Notre objectif est de vous aider à présenter
-                        vos idées, valoriser votre activité et profiter
-                        des possibilités offertes par le numérique.
-                    </p>
-
-                    <a href="a-propos.html"
-                       class="btn btn-outline mt-4">
-                        En savoir plus sur EDS
+                <div class="text-center" style="margin-top: 35px;">
+                    <a class="btn-whatsapp"
+                       href="https://wa.me/50943521045?text=Bonjour%20Emerson%20Digital%20Solution%2C%20je%20souhaite%20commencer%20un%20projet."
+                       target="_blank" rel="noopener noreferrer">
+                        Commencer mon projet sur WhatsApp
                     </a>
-
                 </div>
-
             </div>
-
         </section>
 
-
-        <!-- ================= APPEL À L'ACTION ================= -->
-
-        <section class="section">
-
+        <!-- APERÇU DU PORTFOLIO -->
+        <section class="home-section portfolio-home">
             <div class="container">
-
-                <div class="final-cta">
-
-                    <h2>
-                        Un projet en tête ?
-                        <span class="text-green">Parlons-en !</span>
+                <div class="section-header text-center">
+                    <h2 class="section-title">
+                        Découvrez notre <span class="text-green">portfolio</span>
                     </h2>
-
-                    <p>
-                        Vous avez besoin d'un logo, d'un site web,
-                        d'un flyer ou d'une autre solution numérique ?
-                        Présentez-nous votre idée afin que nous puissions
-                        discuter de vos besoins.
+                    <p class="section-subtitle">
+                        Consultez nos exemples de réalisations et découvrez notre univers créatif.
                     </p>
-
-                    <a
-                        href="https://wa.me/50943521045?text=Bonjour%20Emerson%20Digital%20Solution%2C%20j%27aimerais%20pr%C3%A9senter%20mon%20projet."
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="btn btn-primary">
-
-                        Discuter de mon projet sur WhatsApp
-                    </a>
-
                 </div>
 
-            </div>
+                <div class="portfolio-home-card">
+                    <div>
+                        <img src="site-web.jpg"
+                             alt="Aperçu d'un projet web présenté par Emerson Digital Solution"
+                             loading="lazy">
+                    </div>
 
+                    <div>
+                        <h3>Des idées transformées en projets numériques</h3>
+                        <p>
+                            Découvrez des exemples de sites web et de créations graphiques.
+                            Notre portfolio évoluera au fur et à mesure que de nouveaux projets
+                            pourront être présentés.
+                        </p>
+                        <a href="portfolio.html" class="btn btn-primary">
+                            Explorer le portfolio
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- APPEL À L'ACTION FINAL -->
+        <section class="home-cta">
+            <div class="container">
+                <h2>Vous avez un projet en tête ?</h2>
+                <p>
+                    Besoin d'un site web, d'un logo, d'un flyer, d'une vidéo ou d'un autre
+                    service numérique ? Contactez Emerson Digital Solution et expliquons
+                    ensemble votre besoin.
+                </p>
+
+                <div class="hero-actions">
+                    <a class="btn-whatsapp"
+                       href="https://wa.me/50943521045?text=Bonjour%20Emerson%20Digital%20Solution%20%21%20Je%20voudrais%20discuter%20de%20mon%20projet%20et%20conna%C3%AEtre%20vos%20services."
+                       target="_blank" rel="noopener noreferrer">
+                        Discuter sur WhatsApp
+                    </a>
+
+                    <a href="contact.html" class="btn btn-outline">
+                        Demander un devis
+                    </a>
+                </div>
+            </div>
         </section>
 
     </main>
 
-
-    <!-- ================= FOOTER ================= -->
-
+    <!-- PIED DE PAGE : logo retiré, autres informations conservées -->
     <footer class="footer">
-
         <div class="container footer-container">
 
             <div class="footer-col">
-
-                <a href="index.html" aria-label="Accueil Emerson Digital Solution">
-                    <img
-                        src="logo.png"
-                        alt="Logo Emerson Digital Solution"
-                        class="footer-logo"
-                        width="180"
-                        height="80"
-                        loading="lazy">
-                </a>
-
+                <h3>Emerson Digital Solution</h3>
                 <p class="footer-desc">
-                    Des solutions digitales pour booster votre
-                    business en ligne.
+                    Des solutions digitales pour booster votre business en ligne.
                 </p>
-
+                <a href="https://wa.me/50943521045?text=Bonjour%20Emerson%20Digital%20Solution%2C%20je%20souhaite%20obtenir%20des%20informations%20sur%20vos%20services."
+                   target="_blank" rel="noopener noreferrer" class="text-green">
+                    Contactez-nous sur WhatsApp
+                </a>
             </div>
 
-
             <div class="footer-col">
-
                 <h4>Navigation</h4>
-
                 <ul>
                     <li><a href="index.html">Accueil</a></li>
                     <li><a href="a-propos.html">À propos</a></li>
@@ -759,14 +881,10 @@
                     <li><a href="tarifs.html">Tarifs</a></li>
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
-
             </div>
 
-
             <div class="footer-col">
-
                 <h4>Nos services</h4>
-
                 <ul>
                     <li><a href="services.html">Création de sites web</a></li>
                     <li><a href="services.html">Design graphique</a></li>
@@ -774,79 +892,42 @@
                     <li><a href="services.html">Montage vidéo</a></li>
                     <li><a href="services.html">Services numériques</a></li>
                 </ul>
-
             </div>
-
 
             <div class="footer-col">
-
                 <h4>Contact</h4>
-
                 <p>Haïti</p>
-
                 <p>
-                    <a
-                        href="https://wa.me/50943521045"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="text-green">
-
-                        +509 4352 1045
-                    </a>
+                    <a href="https://wa.me/50943521045"
+                       target="_blank" rel="noopener noreferrer"
+                       class="text-green">+509 4352 1045</a>
                 </p>
-
                 <p>
-                    <a href="contact.html">Nous contacter</a>
+                    <a href="contact.html">Parlons de votre projet</a>
                 </p>
-
             </div>
 
         </div>
 
-
         <div class="footer-bottom text-center">
-
             <p>
                 &copy; <span id="year"></span>
-                Emerson Digital Solution.
-                Tous droits réservés.
+                Emerson Digital Solution. Tous droits réservés.
             </p>
-
         </div>
-
     </footer>
 
-
-    <!-- ================= WHATSAPP FLOTTANT ================= -->
-
-    <a
-        href="https://wa.me/50943521045?text=Bonjour%20Emerson%20Digital%20Solution%2C%20j%27aimerais%20discuter%20d%27un%20projet."
-        target="_blank"
-        rel="noopener noreferrer"
-        class="whatsapp-float"
-        aria-label="Discuter avec Emerson Digital Solution sur WhatsApp">
-
-        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+    <!-- BOUTON WHATSAPP FLOTTANT -->
+    <a href="https://wa.me/50943521045?text=Bonjour%20Emerson%20Digital%20Solution%2C%20j%27aimerais%20discuter%20d%27un%20projet."
+       target="_blank" rel="noopener noreferrer"
+       class="whatsapp-float"
+       aria-label="Discuter avec Emerson Digital Solution sur WhatsApp">
+        <svg viewBox="0 0 24 24" fill="currentColor"
+             aria-hidden="true">
             <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
         </svg>
-
     </a>
 
-
-    <!-- ================= JAVASCRIPT EXISTANT ================= -->
-
     <script src="script.js"></script>
-
-    <!-- Année automatique : indépendant du menu existant. -->
-    <script>
-        (function () {
-            const yearElement = document.getElementById("year");
-
-            if (yearElement) {
-                yearElement.textContent = new Date().getFullYear();
-            }
-        })();
-    </script>
-
 </body>
 </html>
