@@ -1,495 +1,70 @@
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Emerson Digital Solution | Vos solutions digitales en Haïti</title>
-    <meta name="description" content="Emerson Digital Solution vous accompagne avec la création de sites web, le design graphique, le montage vidéo, le marketing digital et les services numériques. Contactez-nous sur WhatsApp.">
+    <meta name="description" content="Sites web, design graphique, montage vidéo, marketing digital. Emerson Digital Solution vous accompagne en Haïti. Commandez sur WhatsApp.">
+    
+    <!-- SEO & Partage Social (WhatsApp/Facebook) -->
     <meta name="theme-color" content="#0b1739">
-
-    <link rel="icon" type="image/png" href="logo.png">
+    <link rel="canonical" href="https://votredomaine.com/index.html">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Emerson Digital Solution | Vos solutions digitales">
+    <meta property="og:description" content="Faites grandir votre business avec des solutions digitales adaptées. Commandez directement sur WhatsApp.">
+    <meta property="og:image" content="https://votredomaine.com/site-web.jpg">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    
     <link rel="stylesheet" href="style.css">
-
     <style>
-        /* Améliorations spécifiques à la page d'accueil */
-        .home-hero {
-            padding: 145px 0 85px;
-            background: linear-gradient(135deg, #0b1739 0%, #122956 65%, #0b1739 100%);
-            color: #ffffff;
-            overflow: hidden;
-        }
-
-        .home-hero .container {
-            display: grid;
-            grid-template-columns: 1.2fr 0.8fr;
-            align-items: center;
-            gap: 45px;
-        }
-
-        .hero-badge {
-            display: inline-block;
-            color: #7dff67;
-            border: 1px solid rgba(125,255,103,.45);
-            background: rgba(125,255,103,.08);
-            padding: 9px 14px;
-            border-radius: 30px;
-            font-size: .88rem;
-            margin-bottom: 22px;
-        }
-
-        .home-hero h1 {
-            font-size: clamp(2.2rem, 5vw, 3.8rem);
-            line-height: 1.15;
-            margin: 0 0 22px;
-            color: #ffffff;
-        }
-
-        .home-hero h1 span {
-            color: #7dff67;
-        }
-
-        .hero-description {
-            color: #e1e8f5;
-            font-size: 1.08rem;
-            line-height: 1.8;
-            max-width: 620px;
-            margin-bottom: 28px;
-        }
-
-        .hero-actions {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 13px;
-            margin-bottom: 24px;
-        }
-
-        .hero-actions .btn {
-            text-align: center;
-            padding: 14px 20px;
-        }
-
-        .btn-whatsapp {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 9px;
-            background: #25D366;
-            color: #082b17;
-            border: 2px solid #25D366;
-            border-radius: 6px;
-            padding: 13px 19px;
-            font-weight: 700;
-            text-decoration: none;
-            transition: transform .2s, background .2s;
-        }
-
-        .btn-whatsapp:hover {
-            background: #7dff67;
-            border-color: #7dff67;
-            transform: translateY(-2px);
-        }
-
-        .hero-note {
-            color: #cbd6e8;
-            font-size: .91rem;
-        }
-
-        .hero-visual {
-            padding: 30px;
-            border: 1px solid rgba(255,255,255,.15);
-            border-radius: 20px;
-            background: rgba(255,255,255,.06);
-            box-shadow: 0 20px 60px rgba(0,0,0,.2);
-        }
-
-        .hero-visual h2 {
-            font-size: 1.35rem;
-            color: #ffffff;
-            margin-bottom: 8px;
-        }
-
-        .hero-visual > p {
-            color: #d5dfef;
-            line-height: 1.6;
-            margin-bottom: 22px;
-        }
-
-        .hero-service {
-            display: flex;
-            align-items: center;
-            gap: 13px;
-            padding: 13px 0;
-            border-bottom: 1px solid rgba(255,255,255,.12);
-        }
-
-        .hero-service:last-child {
-            border-bottom: none;
-        }
-
-        .hero-service-icon {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-shrink: 0;
-            width: 43px;
-            height: 43px;
-            border-radius: 10px;
-            background: rgba(125,255,103,.12);
-            font-size: 1.3rem;
-        }
-
-        .hero-service strong {
-            display: block;
-            color: #ffffff;
-            margin-bottom: 3px;
-        }
-
-        .hero-service small {
-            color: #cbd6e8;
-            line-height: 1.5;
-        }
-
-        .trust-strip {
-            padding: 24px 0;
-            background: #f3f6fb;
-        }
-
-        .trust-strip-inner {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 15px 35px;
-            text-align: center;
-        }
-
-        .trust-item {
-            color: #18294a;
-            font-size: .95rem;
-            font-weight: 600;
-        }
-
-        .trust-item span {
-            color: #168c40;
-            margin-right: 6px;
-        }
-
-        .home-section {
-            padding: 75px 0;
-        }
-
-        .home-section .section-header {
-            max-width: 760px;
-            margin: 0 auto 40px;
-        }
-
-        .home-section .section-subtitle {
-            line-height: 1.8;
-        }
-
-        .services-home-grid {
-            display: grid;
-            grid-template-columns: repeat(3, minmax(0, 1fr));
-            gap: 22px;
-        }
-
-        .home-service-card {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            padding: 25px;
-            border: 1px solid #e5eaf2;
-            border-radius: 12px;
-            background: #ffffff;
-            box-shadow: 0 6px 22px rgba(11,23,57,.045);
-            transition: transform .2s, box-shadow .2s;
-        }
-
-        .home-service-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 12px 28px rgba(11,23,57,.1);
-        }
-
-        .home-service-icon {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 53px;
-            height: 53px;
-            border-radius: 12px;
-            background: #eaffea;
-            font-size: 1.6rem;
-            margin-bottom: 17px;
-        }
-
-        .home-service-card h3 {
-            margin: 0 0 11px;
-            color: #0b1739;
-            font-size: 1.18rem;
-        }
-
-        .home-service-card p {
-            color: #536078;
-            line-height: 1.75;
-            margin-bottom: 18px;
-        }
-
-        .home-service-card .service-actions {
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            gap: 13px;
-            margin-top: auto;
-        }
-
-        .service-link {
-            color: #137a36;
-            font-weight: 700;
-            text-decoration: none;
-        }
-
-        .service-link:hover {
-            text-decoration: underline;
-        }
-
-        .mini-order-link {
-            color: #0b1739;
-            font-weight: 700;
-            font-size: .91rem;
-            text-decoration: none;
-        }
-
-        .mini-order-link:hover {
-            color: #168c40;
-        }
-
-        .why-section {
-            background: #f3f6fb;
-        }
-
-        .why-grid {
-            display: grid;
-            grid-template-columns: repeat(3, minmax(0, 1fr));
-            gap: 25px;
-        }
-
-        .why-card {
-            padding: 25px;
-            background: #ffffff;
-            border-radius: 12px;
-            border: 1px solid #e4e9f1;
-        }
-
-        .why-card h3 {
-            color: #0b1739;
-            margin: 12px 0;
-        }
-
-        .why-card p {
-            color: #536078;
-            line-height: 1.75;
-            margin: 0;
-        }
-
-        .why-icon {
-            font-size: 1.8rem;
-        }
-
-        .steps-grid {
-            display: grid;
-            grid-template-columns: repeat(3, minmax(0, 1fr));
-            gap: 25px;
-        }
-
-        .step-card {
-            text-align: center;
-            padding: 26px 22px;
-            border: 1px solid #e5eaf2;
-            border-radius: 12px;
-        }
-
-        .step-number {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 48px;
-            height: 48px;
-            border-radius: 50%;
-            margin: 0 auto 17px;
-            color: #0b1739;
-            background: #7dff67;
-            font-weight: 800;
-            font-size: 1.2rem;
-        }
-
-        .step-card h3 {
-            color: #0b1739;
-            margin-bottom: 10px;
-        }
-
-        .step-card p {
-            color: #536078;
-            line-height: 1.7;
-        }
-
-        .portfolio-home {
-            background: #f3f6fb;
-        }
-
-        .portfolio-home-card {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            align-items: center;
-            gap: 30px;
-            padding: 30px;
-            background: #ffffff;
-            border-radius: 15px;
-            border: 1px solid #e5eaf2;
-        }
-
-        .portfolio-home-card img {
-            width: 100%;
-            max-height: 310px;
-            object-fit: contain;
-            border-radius: 8px;
-        }
-
-        .portfolio-home-card h3 {
-            color: #0b1739;
-            margin-bottom: 13px;
-        }
-
-        .portfolio-home-card p {
-            color: #536078;
-            line-height: 1.8;
-            margin-bottom: 20px;
-        }
-
-        .home-cta {
-            padding: 65px 0;
-            background: #0b1739;
-            color: #ffffff;
-            text-align: center;
-        }
-
-        .home-cta h2 {
-            color: #ffffff;
-            font-size: clamp(1.8rem, 4vw, 2.6rem);
-            margin-bottom: 16px;
-        }
-
-        .home-cta p {
-            color: #dbe4f3;
-            line-height: 1.8;
-            max-width: 700px;
-            margin: 0 auto 25px;
-        }
-
-        .home-cta .hero-actions {
-            justify-content: center;
-            margin-bottom: 0;
-        }
-
-        .footer-desc {
-            line-height: 1.7;
-        }
-
-        @media (max-width: 900px) {
-            .home-hero .container {
-                grid-template-columns: 1fr;
-                gap: 35px;
-            }
-
-            .hero-visual {
-                max-width: 650px;
-            }
-
-            .services-home-grid,
-            .why-grid {
-                grid-template-columns: repeat(2, minmax(0, 1fr));
-            }
-        }
-
-        @media (max-width: 600px) {
-            .home-hero {
-                padding: 115px 0 55px;
-            }
-
-            .home-hero .container {
-                gap: 28px;
-            }
-
-            .home-hero h1 {
-                font-size: 2.15rem;
-            }
-
-            .hero-description {
-                font-size: 1rem;
-            }
-
-            .hero-actions {
-                flex-direction: column;
-                align-items: stretch;
-            }
-
-            .hero-actions .btn,
-            .hero-actions .btn-whatsapp {
-                width: 100%;
-                box-sizing: border-box;
-            }
-
-            .hero-visual {
-                padding: 20px;
-            }
-
-            .home-section {
-                padding: 55px 0;
-            }
-
-            .services-home-grid,
-            .why-grid,
-            .steps-grid,
-            .portfolio-home-card {
-                grid-template-columns: 1fr;
-            }
-
-            .home-service-card,
-            .why-card {
-                padding: 21px;
-            }
-
-            .portfolio-home-card {
-                padding: 20px;
-            }
-
-            .trust-strip-inner {
-                gap: 13px 20px;
-            }
-        }
+        /* Styles spécifiques à l'accueil */
+        .home-hero { padding: 145px 0 85px; background: linear-gradient(135deg, #0b1739 0%, #122956 65%, #0b1739 100%); color: #ffffff; overflow: hidden; }
+        .home-hero .container { display: grid; grid-template-columns: 1.2fr 0.8fr; align-items: center; gap: 45px; }
+        .hero-badge { display: inline-block; color: #7dff67; border: 1px solid rgba(125,255,103,.45); background: rgba(125,255,103,.08); padding: 9px 14px; border-radius: 30px; font-size: .88rem; margin-bottom: 22px; }
+        .home-hero h1 { font-size: clamp(2.2rem, 5vw, 3.8rem); line-height: 1.15; margin: 0 0 22px; color: #ffffff; }
+        .home-hero h1 span { color: #7dff67; }
+        .hero-description { color: #e1e8f5; font-size: 1.08rem; line-height: 1.8; max-width: 620px; margin-bottom: 28px; }
+        .hero-actions { display: flex; flex-wrap: wrap; gap: 13px; margin-bottom: 24px; }
+        .btn-whatsapp { display: inline-flex; align-items: center; justify-content: center; gap: 9px; background: #25D366; color: #082b17; border: 2px solid #25D366; border-radius: 6px; padding: 13px 19px; font-weight: 700; text-decoration: none; transition: transform .2s, background .2s; }
+        .btn-whatsapp:hover { background: #7dff67; border-color: #7dff67; transform: translateY(-2px); }
+        .hero-note { color: #cbd6e8; font-size: .91rem; }
+        .hero-visual { padding: 30px; border: 1px solid rgba(255,255,255,.15); border-radius: 20px; background: rgba(255,255,255,.06); }
+        .hero-visual h2 { font-size: 1.35rem; color: #ffffff; margin-bottom: 8px; }
+        .hero-visual > p { color: #d5dfef; line-height: 1.6; margin-bottom: 22px; }
+        .hero-service { display: flex; align-items: center; gap: 13px; padding: 13px 0; border-bottom: 1px solid rgba(255,255,255,.12); }
+        .hero-service:last-child { border-bottom: none; }
+        .hero-service-icon { display: flex; align-items: center; justify-content: center; width: 43px; height: 43px; border-radius: 10px; background: rgba(125,255,103,.12); font-size: 1.3rem; }
+        .home-section { padding: 75px 0; }
+        .services-home-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px; }
+        .home-service-card { display: flex; flex-direction: column; padding: 25px; border: 1px solid #e5eaf2; border-radius: 12px; background: #ffffff; }
+        .home-service-card .service-actions { display: flex; flex-wrap: wrap; gap: 13px; margin-top: auto; padding-top: 15px; }
+        .step-card { text-align: center; padding: 26px 22px; border: 1px solid #e5eaf2; border-radius: 12px; }
+        .step-number { display: flex; align-items: center; justify-content: center; width: 48px; height: 48px; border-radius: 50%; margin: 0 auto 17px; color: #0b1739; background: #7dff67; font-weight: 800; font-size: 1.2rem; }
+        .home-cta { padding: 65px 0; background: #0b1739; color: #ffffff; text-align: center; }
+        .home-cta h2 { color: #ffffff; margin-bottom: 16px; }
+        .home-cta p { color: #dbe4f3; margin-bottom: 25px; max-width: 700px; margin-left: auto; margin-right: auto; }
+        @media (max-width: 900px) { .home-hero .container, .services-home-grid { grid-template-columns: 1fr; } }
+        @media (max-width: 600px) { .hero-actions { flex-direction: column; } .hero-actions .btn, .hero-actions .btn-whatsapp { width: 100%; } }
     </style>
 </head>
-
 <body>
+    <a href="#main" class="skip-link">Aller au contenu principal</a>
 
-    <!-- EN-TÊTE : logo conservé -->
     <header class="header" id="header">
         <div class="container header-container">
-            <a href="index.html" class="logo-link" aria-label="Retour à l'accueil">
-                <img src="logo.png" alt="Logo Emerson Digital Solution" class="logo-img">
+            <a href="index.html" class="logo-link" aria-label="Emerson Digital Solution - Accueil">
+                <img src="logo.png" alt="Logo Emerson Digital Solution" class="logo-img" width="160" height="45" fetchpriority="high">
             </a>
-
-            <button class="menu-toggle" id="menu-toggle"
-                    aria-label="Ouvrir le menu" aria-expanded="false">
-                <span class="hamburger"></span>
-                <span class="hamburger"></span>
-                <span class="hamburger"></span>
+            <button class="menu-toggle" id="menu-toggle" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="nav">
+                <span class="hamburger"></span><span class="hamburger"></span><span class="hamburger"></span>
             </button>
-
             <nav class="nav" id="nav" aria-label="Navigation principale">
                 <ul class="nav-list">
-                    <li><a href="index.html" class="nav-link">Accueil</a></li>
+                    <li><a href="index.html" class="nav-link" aria-current="page">Accueil</a></li>
                     <li><a href="a-propos.html" class="nav-link">À propos</a></li>
                     <li><a href="services.html" class="nav-link">Services</a></li>
                     <li><a href="portfolio.html" class="nav-link">Portfolio</a></li>
@@ -501,431 +76,104 @@
         </div>
     </header>
 
-    <main>
-
-        <!-- SECTION PRINCIPALE -->
+    <main id="main">
         <section class="home-hero">
             <div class="container">
                 <div class="hero-content">
                     <span class="hero-badge">Votre partenaire digital en Haïti</span>
-
-                    <h1>
-                        Faites grandir votre business avec
-                        <span>des solutions digitales</span>
-                    </h1>
-
-                    <p class="hero-description">
-                        Vous êtes entrepreneur, commerçant, une entreprise ou un particulier ?
-                        Nous vous accompagnons avec des services numériques adaptés à vos besoins
-                        pour présenter votre activité, attirer des clients et développer votre présence en ligne.
-                    </p>
-
+                    <h1>Faites grandir votre business avec <span>des solutions digitales</span></h1>
+                    <p class="hero-description">Entrepreneur, commerçant ou particulier ? Nous vous accompagnons avec des services numériques adaptés pour attirer des clients et développer votre présence en ligne.</p>
                     <div class="hero-actions">
-                        <a class="btn-whatsapp"
-                           href="https://wa.me/50943521045?text=Bonjour%20Emerson%20Digital%20Solution%20%21%20Je%20souhaite%20commander%20un%20service.%20Pouvez-vous%20m%27accompagner%20%3F"
-                           target="_blank" rel="noopener noreferrer">
-                            <span aria-hidden="true">☏</span>
+                        <a class="btn-whatsapp" href="https://wa.me/50943521045?text=Bonjour%20Emerson%20Digital%20Solution%20%21%20Je%20souhaite%20commander%20un%20service." target="_blank" rel="noopener noreferrer">
+                            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
                             Commander sur WhatsApp
                         </a>
-
-                        <a href="services.html" class="btn btn-outline">
-                            Découvrir nos services
-                        </a>
+                        <a href="services.html" class="btn btn-outline" style="border-color: white; color: white;">Découvrir nos services</a>
                     </div>
-
-                    <p class="hero-note">
-                        Une question ou un projet particulier ? Échangeons directement sur WhatsApp.
-                    </p>
+                    <p class="hero-note">Une question ou un projet particulier ? Échangeons directement sur WhatsApp.</p>
                 </div>
-
                 <div class="hero-visual">
                     <h2>Comment pouvons-nous vous aider ?</h2>
-                    <p>Des solutions pour lancer, améliorer et développer votre activité.</p>
-
-                    <div class="hero-service">
-                        <div class="hero-service-icon" aria-hidden="true">🌐</div>
-                        <div>
-                            <strong>Sites web et boutiques en ligne</strong>
-                            <small>Présentez vos produits et votre entreprise sur Internet.</small>
-                        </div>
-                    </div>
-
-                    <div class="hero-service">
-                        <div class="hero-service-icon" aria-hidden="true">🎨</div>
-                        <div>
-                            <strong>Design graphique</strong>
-                            <small>Logos, flyers, affiches et visuels professionnels.</small>
-                        </div>
-                    </div>
-
-                    <div class="hero-service">
-                        <div class="hero-service-icon" aria-hidden="true">📱</div>
-                        <div>
-                            <strong>Communication digitale</strong>
-                            <small>Des contenus pour mieux communiquer avec vos clients.</small>
-                        </div>
-                    </div>
-
-                    <div class="hero-service">
-                        <div class="hero-service-icon" aria-hidden="true">🎬</div>
-                        <div>
-                            <strong>Vidéo et services numériques</strong>
-                            <small>Montage vidéo et autres services selon vos besoins.</small>
-                        </div>
-                    </div>
+                    <p>Des solutions pour lancer et développer votre activité.</p>
+                    <div class="hero-service"><div class="hero-service-icon">🌐</div><div><strong>Sites web & boutiques</strong><br><small>Présentez vos produits sur Internet.</small></div></div>
+                    <div class="hero-service"><div class="hero-service-icon">🎨</div><div><strong>Design graphique</strong><br><small>Logos, flyers et visuels pro.</small></div></div>
+                    <div class="hero-service"><div class="hero-service-icon">🎬</div><div><strong>Vidéo & communication</strong><br><small>Montage et contenus réseaux.</small></div></div>
                 </div>
             </div>
         </section>
 
-        <!-- POINTS DE CONFIANCE -->
-        <section class="trust-strip" aria-label="Nos engagements">
-            <div class="container trust-strip-inner">
-                <div class="trust-item"><span>✓</span> Services variés</div>
-                <div class="trust-item"><span>✓</span> Contact direct</div>
-                <div class="trust-item"><span>✓</span> Demandes personnalisées</div>
-                <div class="trust-item"><span>✓</span> Commande simple sur WhatsApp</div>
-            </div>
-        </section>
-
-        <!-- SERVICES -->
-        <section class="home-section" id="services">
+        <section class="home-section" style="background: #f3f6fb;">
             <div class="container">
                 <div class="section-header text-center">
-                    <h2 class="section-title">
-                        Nos <span class="text-green">services</span>
-                    </h2>
-                    <p class="section-subtitle">
-                        Tout ce qu'il faut pour améliorer votre image, présenter votre activité
-                        et développer votre présence numérique au même endroit.
-                    </p>
+                    <h2 class="section-title">Nos <span class="text-green">services</span></h2>
+                    <p class="section-subtitle">Tout ce qu'il faut pour développer votre présence numérique.</p>
                 </div>
-
                 <div class="services-home-grid">
-
                     <article class="home-service-card">
-                        <div class="home-service-icon" aria-hidden="true">🌐</div>
+                        <div class="home-service-icon" style="width: 50px; height: 50px; background: #eaffea; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; margin-bottom: 15px;">🌐</div>
                         <h3>Création de sites web</h3>
-                        <p>
-                            Sites vitrines, sites professionnels et boutiques en ligne pour présenter
-                            votre entreprise, vos produits ou vos services.
-                        </p>
-                        <div class="service-actions">
-                            <a href="services.html" class="service-link">En savoir plus →</a>
-                            <a class="mini-order-link"
-                               href="https://wa.me/50943521045?text=Bonjour%2C%20je%20souhaite%20commander%20un%20site%20web%20ou%20une%20boutique%20en%20ligne."
-                               target="_blank" rel="noopener noreferrer">Commander</a>
-                        </div>
+                        <p>Sites vitrines, professionnels et boutiques en ligne pour présenter votre activité.</p>
+                        <div class="service-actions"><a href="services.html" class="btn-text">En savoir plus →</a><a href="https://wa.me/50943521045?text=Je%20souhaite%20un%20site%20web." target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline">Commander</a></div>
                     </article>
-
                     <article class="home-service-card">
-                        <div class="home-service-icon" aria-hidden="true">🎨</div>
+                        <div class="home-service-icon" style="width: 50px; height: 50px; background: #eaffea; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; margin-bottom: 15px;">🎨</div>
                         <h3>Design graphique</h3>
-                        <p>
-                            Logos, flyers, affiches, cartes de visite et bannières pour donner
-                            à votre activité une image claire et professionnelle.
-                        </p>
-                        <div class="service-actions">
-                            <a href="services.html" class="service-link">En savoir plus →</a>
-                            <a class="mini-order-link"
-                               href="https://wa.me/50943521045?text=Bonjour%2C%20je%20souhaite%20commander%20un%20service%20de%20design%20graphique."
-                               target="_blank" rel="noopener noreferrer">Commander</a>
-                        </div>
+                        <p>Logos, flyers, affiches, cartes de visite pour une image professionnelle.</p>
+                        <div class="service-actions"><a href="services.html" class="btn-text">En savoir plus →</a><a href="https://wa.me/50943521045?text=Je%20souhaite%20du%20design%20graphique." target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline">Commander</a></div>
                     </article>
-
                     <article class="home-service-card">
-                        <div class="home-service-icon" aria-hidden="true">📱</div>
-                        <h3>Communication digitale</h3>
-                        <p>
-                            Accompagnement pour mieux présenter votre activité sur les réseaux
-                            sociaux et communiquer avec votre public.
-                        </p>
-                        <div class="service-actions">
-                            <a href="services.html" class="service-link">En savoir plus →</a>
-                            <a class="mini-order-link"
-                               href="https://wa.me/50943521045?text=Bonjour%2C%20je%20souhaite%20discuter%20de%20la%20communication%20digitale%20de%20mon%20activit%C3%A9."
-                               target="_blank" rel="noopener noreferrer">Commander</a>
-                        </div>
+                        <div class="home-service-icon" style="width: 50px; height: 50px; background: #eaffea; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; margin-bottom: 15px;">📱</div>
+                        <h3>Marketing digital</h3>
+                        <p>Gestion de réseaux sociaux et stratégie de contenu pour vous démarquer.</p>
+                        <div class="service-actions"><a href="services.html" class="btn-text">En savoir plus →</a><a href="https://wa.me/50943521045?text=Je%20souhaite%20du%20marketing%20digital." target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline">Commander</a></div>
                     </article>
-
-                    <article class="home-service-card">
-                        <div class="home-service-icon" aria-hidden="true">🖼️</div>
-                        <h3>Création de contenus visuels</h3>
-                        <p>
-                            Des visuels adaptés à vos publications, promotions, annonces et
-                            campagnes pour mieux attirer l'attention.
-                        </p>
-                        <div class="service-actions">
-                            <a href="services.html" class="service-link">En savoir plus →</a>
-                            <a class="mini-order-link"
-                               href="https://wa.me/50943521045?text=Bonjour%2C%20je%20souhaite%20commander%20des%20contenus%20visuels%20pour%20mon%20activit%C3%A9."
-                               target="_blank" rel="noopener noreferrer">Commander</a>
-                        </div>
-                    </article>
-
-                    <article class="home-service-card">
-                        <div class="home-service-icon" aria-hidden="true">🎬</div>
-                        <h3>Montage vidéo</h3>
-                        <p>
-                            Montage de vidéos pour vos promotions, présentations, publications
-                            et contenus destinés aux réseaux sociaux.
-                        </p>
-                        <div class="service-actions">
-                            <a href="services.html" class="service-link">En savoir plus →</a>
-                            <a class="mini-order-link"
-                               href="https://wa.me/50943521045?text=Bonjour%2C%20je%20souhaite%20commander%20un%20service%20de%20montage%20vid%C3%A9o."
-                               target="_blank" rel="noopener noreferrer">Commander</a>
-                        </div>
-                    </article>
-
-                    <article class="home-service-card">
-                        <div class="home-service-icon" aria-hidden="true">📲</div>
-                        <h3>Services numériques et top-up</h3>
-                        <p>
-                            Des services numériques complémentaires et des solutions de recharge
-                            selon les produits et disponibilités proposés.
-                        </p>
-                        <div class="service-actions">
-                            <a href="services.html" class="service-link">En savoir plus →</a>
-                            <a class="mini-order-link"
-                               href="https://wa.me/50943521045?text=Bonjour%2C%20je%20souhaite%20conna%C3%AEtre%20les%20services%20num%C3%A9riques%20et%20top-up%20disponibles."
-                               target="_blank" rel="noopener noreferrer">Commander</a>
-                        </div>
-                    </article>
-
                 </div>
-
-                <div class="text-center" style="margin-top: 35px;">
-                    <a href="services.html" class="btn btn-primary">
-                        Voir tous nos services
-                    </a>
-                </div>
+                <div class="text-center" style="margin-top: 35px;"><a href="services.html" class="btn btn-primary">Voir tous nos services</a></div>
             </div>
         </section>
 
-        <!-- POURQUOI NOUS CHOISIR -->
-        <section class="home-section why-section">
+        <section class="home-section">
             <div class="container">
                 <div class="section-header text-center">
-                    <h2 class="section-title">
-                        Pourquoi choisir <span class="text-green">EDS</span> ?
-                    </h2>
-                    <p class="section-subtitle">
-                        Nous cherchons à comprendre votre besoin pour vous proposer une solution
-                        adaptée à votre projet et à vos objectifs.
-                    </p>
+                    <h2 class="section-title">Comment <span class="text-green">commander</span> ?</h2>
                 </div>
-
-                <div class="why-grid">
-                    <article class="why-card">
-                        <div class="why-icon" aria-hidden="true">🎯</div>
-                        <h3>Des solutions adaptées</h3>
-                        <p>
-                            Votre projet est unique. Nous échangeons avec vous pour mieux comprendre
-                            votre demande avant de définir la solution appropriée.
-                        </p>
-                    </article>
-
-                    <article class="why-card">
-                        <div class="why-icon" aria-hidden="true">🤝</div>
-                        <h3>Un contact direct</h3>
-                        <p>
-                            Vous pouvez nous écrire sur WhatsApp pour poser vos questions,
-                            expliquer votre besoin et demander un devis.
-                        </p>
-                    </article>
-
-                    <article class="why-card">
-                        <div class="why-icon" aria-hidden="true">📱</div>
-                        <h3>Un parcours simple</h3>
-                        <p>
-                            Découvrez les services sur le site, choisissez celui qui vous intéresse
-                            et démarrez votre commande depuis votre téléphone.
-                        </p>
-                    </article>
+                <div class="grid-3">
+                    <article class="step-card"><div class="step-number">1</div><h3>Choisissez un service</h3><p>Parcourez nos services et identifiez votre besoin.</p></article>
+                    <article class="step-card"><div class="step-number">2</div><h3>Contactez-nous</h3><p>Cliquez sur WhatsApp et expliquez-nous votre projet.</p></article>
+                    <article class="step-card"><div class="step-number">3</div><h3>Confirmez</h3><p>Nous discutons du prix, du délai et démarrons.</p></article>
                 </div>
             </div>
         </section>
 
-        <!-- ÉTAPES DE COMMANDE -->
-        <section class="home-section" id="comment-commander">
-            <div class="container">
-                <div class="section-header text-center">
-                    <h2 class="section-title">
-                        Comment <span class="text-green">commander</span> ?
-                    </h2>
-                    <p class="section-subtitle">
-                        Trois étapes simples pour commencer votre projet avec Emerson Digital Solution.
-                    </p>
-                </div>
-
-                <div class="steps-grid">
-                    <article class="step-card">
-                        <div class="step-number">1</div>
-                        <h3>Choisissez un service</h3>
-                        <p>
-                            Parcourez nos services et identifiez celui qui correspond
-                            à votre besoin.
-                        </p>
-                    </article>
-
-                    <article class="step-card">
-                        <div class="step-number">2</div>
-                        <h3>Contactez-nous</h3>
-                        <p>
-                            Cliquez sur le bouton WhatsApp et expliquez-nous ce que vous souhaitez.
-                        </p>
-                    </article>
-
-                    <article class="step-card">
-                        <div class="step-number">3</div>
-                        <h3>Confirmez votre projet</h3>
-                        <p>
-                            Nous discutons des détails, du prix, du délai et des prochaines étapes
-                            avant de démarrer.
-                        </p>
-                    </article>
-                </div>
-
-                <div class="text-center" style="margin-top: 35px;">
-                    <a class="btn-whatsapp"
-                       href="https://wa.me/50943521045?text=Bonjour%20Emerson%20Digital%20Solution%2C%20je%20souhaite%20commencer%20un%20projet."
-                       target="_blank" rel="noopener noreferrer">
-                        Commencer mon projet sur WhatsApp
-                    </a>
-                </div>
-            </div>
-        </section>
-
-        <!-- APERÇU DU PORTFOLIO -->
-        <section class="home-section portfolio-home">
-            <div class="container">
-                <div class="section-header text-center">
-                    <h2 class="section-title">
-                        Découvrez notre <span class="text-green">portfolio</span>
-                    </h2>
-                    <p class="section-subtitle">
-                        Consultez nos exemples de réalisations et découvrez notre univers créatif.
-                    </p>
-                </div>
-
-                <div class="portfolio-home-card">
-                    <div>
-                        <img src="site-web.jpg"
-                             alt="Aperçu d'un projet web présenté par Emerson Digital Solution"
-                             loading="lazy">
-                    </div>
-
-                    <div>
-                        <h3>Des idées transformées en projets numériques</h3>
-                        <p>
-                            Découvrez des exemples de sites web et de créations graphiques.
-                            Notre portfolio évoluera au fur et à mesure que de nouveaux projets
-                            pourront être présentés.
-                        </p>
-                        <a href="portfolio.html" class="btn btn-primary">
-                            Explorer le portfolio
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- APPEL À L'ACTION FINAL -->
         <section class="home-cta">
             <div class="container">
                 <h2>Vous avez un projet en tête ?</h2>
-                <p>
-                    Besoin d'un site web, d'un logo, d'un flyer, d'une vidéo ou d'un autre
-                    service numérique ? Contactez Emerson Digital Solution et expliquons
-                    ensemble votre besoin.
-                </p>
-
-                <div class="hero-actions">
-                    <a class="btn-whatsapp"
-                       href="https://wa.me/50943521045?text=Bonjour%20Emerson%20Digital%20Solution%20%21%20Je%20voudrais%20discuter%20de%20mon%20projet%20et%20conna%C3%AEtre%20vos%20services."
-                       target="_blank" rel="noopener noreferrer">
-                        Discuter sur WhatsApp
-                    </a>
-
-                    <a href="contact.html" class="btn btn-outline">
-                        Demander un devis
-                    </a>
-                </div>
+                <p>Besoin d'un site web, d'un logo ou d'une vidéo ? Contactez-nous et expliquons ensemble votre besoin.</p>
+                <a class="btn-whatsapp" href="https://wa.me/50943521045?text=Bonjour%2C%20je%20voudrais%20discuter%20de%20mon%20projet." target="_blank" rel="noopener noreferrer">Discuter sur WhatsApp</a>
             </div>
         </section>
-
     </main>
 
-    <!-- PIED DE PAGE : logo retiré, autres informations conservées -->
     <footer class="footer">
         <div class="container footer-container">
-
             <div class="footer-col">
-                <h3>Emerson Digital Solution</h3>
-                <p class="footer-desc">
-                    Des solutions digitales pour booster votre business en ligne.
-                </p>
-                <a href="https://wa.me/50943521045?text=Bonjour%20Emerson%20Digital%20Solution%2C%20je%20souhaite%20obtenir%20des%20informations%20sur%20vos%20services."
-                   target="_blank" rel="noopener noreferrer" class="text-green">
-                    Contactez-nous sur WhatsApp
-                </a>
+                <img src="logo.png" alt="Logo Emerson Digital Solution" class="footer-logo" width="120" height="36" loading="lazy">
+                <p class="footer-desc">Des solutions digitales pour booster votre présence en ligne.</p>
+                <div style="margin-top: 15px; display: flex; gap: 15px;">
+                    <a href="https://facebook.com/VOTRE_PAGE" target="_blank" rel="noopener noreferrer" aria-label="Facebook" style="color: #fff; font-weight: bold;">FB</a>
+                    <a href="https://instagram.com/VOTRE_PAGE" target="_blank" rel="noopener noreferrer" aria-label="Instagram" style="color: #fff; font-weight: bold;">IG</a>
+                    <a href="https://tiktok.com/@VOTRE_PAGE" target="_blank" rel="noopener noreferrer" aria-label="TikTok" style="color: #fff; font-weight: bold;">TikTok</a>
+                </div>
             </div>
-
-            <div class="footer-col">
-                <h4>Navigation</h4>
-                <ul>
-                    <li><a href="index.html">Accueil</a></li>
-                    <li><a href="a-propos.html">À propos</a></li>
-                    <li><a href="services.html">Services</a></li>
-                    <li><a href="portfolio.html">Portfolio</a></li>
-                    <li><a href="tarifs.html">Tarifs</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </div>
-
-            <div class="footer-col">
-                <h4>Nos services</h4>
-                <ul>
-                    <li><a href="services.html">Création de sites web</a></li>
-                    <li><a href="services.html">Design graphique</a></li>
-                    <li><a href="services.html">Communication digitale</a></li>
-                    <li><a href="services.html">Montage vidéo</a></li>
-                    <li><a href="services.html">Services numériques</a></li>
-                </ul>
-            </div>
-
-            <div class="footer-col">
-                <h4>Contact</h4>
-                <p>Haïti</p>
-                <p>
-                    <a href="https://wa.me/50943521045"
-                       target="_blank" rel="noopener noreferrer"
-                       class="text-green">+509 4352 1045</a>
-                </p>
-                <p>
-                    <a href="contact.html">Parlons de votre projet</a>
-                </p>
-            </div>
-
+            <div class="footer-col"><h3>Navigation</h3><ul><li><a href="index.html">Accueil</a></li><li><a href="a-propos.html">À propos</a></li><li><a href="services.html">Services</a></li><li><a href="portfolio.html">Portfolio</a></li><li><a href="tarifs.html">Tarifs</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+            <div class="footer-col"><h3>Nos services</h3><ul><li><a href="services.html">Création de sites web</a></li><li><a href="services.html">Design graphique</a></li><li><a href="services.html">Montage vidéo</a></li><li><a href="services.html">Marketing digital</a></li></ul></div>
+            <div class="footer-col"><h3>Contact</h3><p>Haïti (et partout en ligne)</p><p><a href="https://wa.me/50943521045" target="_blank" rel="noopener noreferrer" class="text-green" style="font-weight: bold; font-size: 1.1rem;">+509 4352 1045</a></p><p style="font-size: 0.85rem; color: #a0aec0; margin-top: 10px;">Paiement sécurisé via<br><strong>MonCash</strong> / <strong>NatCash</strong></p></div>
         </div>
-
-        <div class="footer-bottom text-center">
-            <p>
-                &copy; <span id="year"></span>
-                Emerson Digital Solution. Tous droits réservés.
-            </p>
-        </div>
+        <div class="footer-bottom text-center"><p>&copy; <span id="year"></span> Emerson Digital Solution. Tous droits réservés.</p></div>
     </footer>
 
-    <!-- BOUTON WHATSAPP FLOTTANT -->
-    <a href="https://wa.me/50943521045?text=Bonjour%20Emerson%20Digital%20Solution%2C%20j%27aimerais%20discuter%20d%27un%20projet."
-       target="_blank" rel="noopener noreferrer"
-       class="whatsapp-float"
-       aria-label="Discuter avec Emerson Digital Solution sur WhatsApp">
-        <svg viewBox="0 0 24 24" fill="currentColor"
-             aria-hidden="true">
-            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
-        </svg>
+    <a href="https://wa.me/50943521045?text=Bonjour%2C%20j'aimerais%20discuter%20d'un%20projet." target="_blank" rel="noopener noreferrer" class="whatsapp-float" aria-label="Discuter sur WhatsApp">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
     </a>
 
     <script src="script.js"></script>
